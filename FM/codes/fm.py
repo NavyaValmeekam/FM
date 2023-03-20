@@ -113,6 +113,8 @@ plt.grid(True)
 plt.title('Final Output Signal')
 plt.show()
 
+d = np.abs(np.fft.fft(audio)*np.fft.ifft(y6))
+print('Distortion of demodulated signal from input signal:',d)
      
 wavfile.write('signal_out.wav', sample_rate, y6)
 
